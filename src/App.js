@@ -35,7 +35,7 @@ const App = () => {
     updateSplits([...splits, durationMs].slice(-10));
 
   return (
-    <div style={{ width: "fit-content", margin: "0 auto" }}>
+    <div style={{ width: 300, margin: "0 auto" }}>
       {status === STATUS.INITIAL && <StopwatchInitial start={start} />}
       {status === STATUS.RUNNING && (
         <StopwatchRunning
