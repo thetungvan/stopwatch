@@ -7,8 +7,8 @@ const Duration = ({ durationMs }) => {
   return (
     <div style={{ fontSize: 24, padding: "8px 0" }}>
       <code>
-        <span>{hh}</span>:<span>{mm}</span>
-        <span>{ss}</span>.<span style={{ fontSize: 12 }}>{ms}</span>
+        <span>{hh}</span>:<span>{mm}</span>:<span>{ss}</span>.
+        <span style={{ fontSize: 12 }}>{ms}</span>
       </code>
     </div>
   );
