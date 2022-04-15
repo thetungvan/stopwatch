@@ -24,11 +24,13 @@ const StopwatchRunning = ({ startTimeMs, stop, split }) => {
 
   return (
     <div>
-      <h4>Running</h4>
+      <h4 style={{ color: "#2e9599" }}>Running...</h4>
       <Duration durationMs={durationMs} />
       <div>
-        <button onClick={stop}>Stop</button>
-        <button onClick={() => split(durationMs)}>Split</button>
+        <button style={{ marginRight: 8 }} onClick={stop}>
+          Stop
+        </button>
+        <button onClick={() => split(durationMs)}>Lap</button>
       </div>
     </div>
   );

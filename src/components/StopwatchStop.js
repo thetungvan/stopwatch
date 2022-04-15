@@ -5,10 +5,12 @@ const StopwatchStop = ({ startTimeMs, resume, reset }) => {
 
   return (
     <div>
-      <h4>Paused</h4>
+      <h4 style={{ color: "#f46c3f" }}>Stopped</h4>
       <Duration durationMs={durationMs} />
       <div>
-        <button onClick={() => resume(durationMs)}>Resume</button>
+        <button style={{ marginRight: 8 }} onClick={() => resume(durationMs)}>
+          Resume
+        </button>
         <button onClick={reset}>Reset</button>
       </div>
     </div>

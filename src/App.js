@@ -3,7 +3,7 @@ import { useState } from "react";
 import StopwatchInitial from "./components/StopwatchInitial";
 import StopwatchRunning from "./components/StopwatchRunning";
 import StopwatchStop from "./components/StopwatchStop";
-import { convertTime } from "./components/utils";
+import Duration from "./components/Duration";
 
 const STATUS = {
   INITIAL: "initial",
@@ -31,10 +31,11 @@ const App = () => {
     updateSplits([]);
   };
 
-  const splitTime = (durationMs) => updateSplits([...splits, durationMs]);
+  const splitTime = (durationMs) =>
+    updateSplits([...splits, durationMs].slice(-10));
 
   return (
-    <div>
+    <div style={{ width: "fit-content", margin: "0 auto" }}>
       {status === STATUS.INITIAL && <StopwatchInitial start={start} />}
       {status === STATUS.RUNNING && (
         <StopwatchRunning
@@ -50,8 +51,9 @@ const App = () => {
           reset={reset}
         />
       )}
+      <h4>Laps</h4>
       {splits.map((split) => (
-        <p key={split}>{convertTime(split)}</p>
+        <Duration key={split} durationMs={split} />
       ))}
     </div>
   );
